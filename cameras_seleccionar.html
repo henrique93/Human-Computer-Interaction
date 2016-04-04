@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"/>
+
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+<link rel = "stylesheet" href = "jquery.mobile-1.4.5.min.css">
+
+<script src = "jquery-1.11.2.min.js"></script>
+<script src = "jquery.mobile-1.4.5.min.js"></script>
+<script src = "funcoes.js"></script>
+
+</head>
+
+<body onload = "startTime()">
+    
+<div class = "ecra noselect">    
+
+<div class = "esquerda botao cursor" onclick = "retroceder(event)"  onmousedown = "inicio(event)" id = "esquerdabtfeed"></div>
+
+<div class = "direita botao cursor" onclick = "bloquear(event)"></div>
+
+<div class = "direita-baixo botao cursor" id = "btajuda-cameras_seleccionar"></div>
+
+<div class = "barra">
+    <table class = "tabela">
+        <col width = "102">
+        <col width = "10">
+        <col width = "30">
+        <tr>
+            <td align = "left">
+                <span class = "sp-barra font-align">
+                    Palco <script> document.write(Math.floor(Number(sessionStorage.pc)/10)); </script>
+                </span>
+            </td>
+            
+            <td align = "right">
+                <img hidden class = "imagem-alarme" src = "imagens/alarme-icon.png"/>
+                <td id = "bar" align = "right" class = "font-align">
+                </td>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<table class = "tabela cursor sem_toque">
+    <col width = "72">
+    <col width = "72">
+    <tr>
+        <td onclick = "location.href='cameras_feed.html'" align = "center" style = "border-bottom: 1pt solid; border-right: 1pt solid; border-color: gray;" id = "camera1">
+            <span class = "sp-menu-cameras font-align"> Cam1 </span>
+        </td>
+        <td class = "border-bottom-gray" onclick = "location.href='cameras_feed.html'" align = "center" id = "camera2">
+            <span class = "sp-menu-cameras font-align"> Cam2 </span>
+        </td>
+    </tr>
+    <tr>
+        <td onclick = "location.href='cameras_feed.html'" align = "center" style = "border-right: 1pt solid; border-color: gray" id = "camera3">
+            <span class = "sp-menu-cameras font-align"> Cam3 </span>
+        </td>
+        <td onclick = "location.href='cameras_feed.html'" align = "center" id = "camera4">
+            <span class = "sp-menu-cameras font-align"> Cam4 </span>
+        </td>
+    </tr>
+        
+</table>
+
+<!-- Pop-up de ajuda -->
+<div class = "ajuda-popup" id = "ajuda">
+    <span class = "ajuda sp-alerta-agendado font-align" style = "font-size: 12pt; top: 10%; left: 4%"> </span>
+    <div class = "botao-ok cursor" style = "top: 75%">
+        <span class = "sp-ok font-align"> OK </span>
+    </div>
+</div>
+
+</div>
+
+</body>
+
+</html>

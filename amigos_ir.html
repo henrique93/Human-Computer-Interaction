@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"/>
+
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+<link rel = "stylesheet" href = "jquery.mobile-1.4.5.min.css">
+
+<script src = "jquery-1.11.2.min.js"></script>
+<script src = "jquery.mobile-1.4.5.min.js"></script>
+<script src = "funcoes.js"></script>
+
+</head>
+
+<body onload = "startTime()">
+    
+<div class = "ecra noselect">    
+    
+<div class = "esquerda botao cursor" onclick = "retroceder(event)"  onmousedown = "inicio(event)"></div>
+
+<div class = "direita botao cursor" onclick = "bloquear(event)"></div>    
+
+<div class = "direita-baixo botao cursor" id = "btajuda-amigos_ir"></div>
+
+<div class = "barra" bgcolor = "black">
+    <table class = "tabela">
+        <col width = "102">
+        <col width = "10">
+        <col width = "30">
+        <tr>
+            <td align = "left">
+                <span class = "sp-barra font-align"> <script> document.write(sessionStorage.amigo) </script> </span>
+            </td>
+            
+            <td align = "right">
+                <img class = "imagem-alarme" src = "imagens/alarme-icon.png"/>
+                <td id = "bar" align = "right" class = "font-align">
+                </td>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<img class = "seta" src = "imagens/gpsarrow-icon.png"/>
+         
+<div class = "dist">
+    <span class = "sp-menu-remover font-align" style = "position: relative"> 100m </span>
+</div> 
+
+<!-- Pop-up de ajuda -->
+<div class = "ajuda-popup" id = "ajuda">
+    <span class = "ajuda sp-alerta-agendado font-align" style = "font-size: 12pt; top: 10%; left: 4%"> </span>
+    <div class = "botao-ok cursor" style = "top: 75%">
+        <span class = "sp-ok font-align"> OK </span>
+    </div>
+</div>
+
+</div>
+
+</body>
+
+</html>

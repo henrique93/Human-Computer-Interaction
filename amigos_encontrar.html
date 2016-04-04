@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"/>
+
+<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+
+<script src = "jquery-1.11.2.min.js"></script>
+<script src = "jquery.mobile-1.4.5.min.js"></script>
+<script src = "funcoes.js"></script>
+<script>
+     $(document).on("pagecreate","#pageone",function(){
+        var ecra = 1;
+        if(sessionStorage.nr_amigos > 4)
+            $(".tabela-bolas").show();
+        $("#ecra").on("swipe",function(){
+            if(ecra && sessionStorage.nr_amigos > 4){
+                $(".tabela-bolas").show();
+                $("#ecra1").fadeOut(400,function(){$("#ecra2").fadeIn();});
+                ecra = 0;
+                $("#bola1").css("background", "#A5C663");
+                $("#bola2").css("background", "black");
+            }
+            else {
+                $("#ecra2").fadeOut(400,function(){$("#ecra1").fadeIn();});
+                ecra = 1;
+                $("#bola1").css("background", "black");
+                $("#bola2").css("background", "#A5C663");
+            }
+        });
+    });
+</script>
+
+</head>
+
+<body data-role="page" onload = "startTime(); amigos_adicionados(); seleccionar_amigo(); escolher_menu();" id="pageone">
+
+<div class = "ecra noselect" id = "ecra">
+
+<div class = "esquerda botao cursor" onclick = "location.href='amigos.html'"  onmousedown = "inicio(event)"></div>
+
+<div class = "direita botao cursor" onclick = "bloquear(event)"></div>
+
+<div class = "direita-baixo botao cursor" id = "btajuda-amigos_encontrar"></div>
+
+<div class = "barra">
+    <table class = "tabela">
+        <col width = "102">
+        <col width = "10">
+        <col width = "30">
+        <tr>
+            <td align = "left">
+                <span class = "sp-barra font-align"> Amigos </span>
+            </td>
+
+            <td align = "right">
+                <img class = "imagem-alarme" src = "imagens/alarme-icon.png"/>
+                <td id = "bar" align = "right" class = "font-align">
+                </td>
+            </td>
+        </tr>
+    </table>
+
+    <table hidden class = "tabela-bolas">
+        <td>
+            <div class = "circle" style = "background: black;" id = "bola1"> </div>
+        </td>
+
+        <td>
+            <div class = "circle" id = "bola2"> </div>
+        </td>
+    </table>
+</div>
+
+<table class = "tabela cursor sem_toque" id = "ecra1">
+    <tr>
+        <td align = "center" id = "amigo1"> 
+            <img id = "amigo1_foto"/>
+            <span id = "amigo1_nome">  </span>
+        </td>
+        <td onclick = "location.href='amigos_menu_encontrar.html'" align = "center" id = "amigo2">
+            <img id = "amigo2_foto"/>
+            <span id = "amigo2_nome">  </span>
+        </td>
+    </tr>
+
+    <tr>
+        <td onclick = "location.href='amigos_menu_encontrar.html'" align = "center" id = "amigo3">
+            <img id = "amigo3_foto"/>
+            <span id = "amigo3_nome"> </span>
+        </td>
+        <td onclick = "location.href='amigos_menu_encontrar.html'" align = "center" id = "amigo4">
+            <img id = "amigo4_foto"/>
+            <span id = "amigo4_nome"> </span>
+        </td>
+    </tr>
+</table>
+
+
+<table class = "tabela cursor sem_toque" id = "ecra2">
+    <tr>
+        <td onclick = "location.href='amigos_menu_encontrar.html'" align = "center" id = "amigo5"> 
+            <img id = "amigo5_foto"/>
+            <span id = "amigo5_nome">  </span>
+        </td>
+        <td onclick = "location.href='amigos_menu_encontrar.html'" align = "center" id = "amigo6">
+            <img id = "amigo6_foto"/>
+            <span id = "amigo6_nome">  </span>
+        </td>
+    </tr>
+
+    <tr>
+        <td onclick = "location.href='amigos_menu_encontrar.html'" align = "center" id = "amigo7">
+            <img id = "amigo7_foto"/>
+            <span id = "amigo7_nome"> </span>
+        </td>
+        <td onclick = "location.href='amigos_menu_encontrar.html'" align = "center" id = "amigo8">
+            <img id = "amigo8_foto"/>
+            <span id = "amigo8_nome"> </span>
+        </td>
+    </tr>
+</table> 
+
+<!-- Pop-up de ajuda -->
+<div class = "ajuda-popup" id = "ajuda">
+    <span class = "ajuda sp-alerta-agendado font-align" style = "font-size: 12pt; top: 10%; left: 4%"> </span>
+    <div class = "botao-ok cursor" style = "top: 75%">
+        <span class = "sp-ok font-align"> OK </span>
+    </div>
+</div>
+
+</div>
+
+</body>
+
+</html>

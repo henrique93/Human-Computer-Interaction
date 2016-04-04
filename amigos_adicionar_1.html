@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"/>
+
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+<link rel = "stylesheet" href = "jquery.mobile-1.4.5.min.css">
+
+<script src = "jquery-1.11.2.min.js"></script>
+<script src = "jquery.mobile-1.4.5.min.js"></script>
+<script src = "funcoes.js"></script>
+
+</head>
+
+<body onload = "startTime(); adicionar_perfil();">
+    
+<div class = "ecra noselect">    
+
+<div class = "esquerda botao cursor" onclick = "location.href='amigos.html'"  onmousedown = "inicio(event)"></div>
+
+<div class = "direita botao cursor" onclick = "bloquear(event)"></div>
+
+<div class = "direita-baixo botao cursor" id = "btajuda-amigos_adicionar_1"></div>
+
+<div class = "barra">
+    <table class = "tabela">
+        <col width = "102">
+        <col width = "10">
+        <col width = "30">
+        <tr>
+            <td align = "left">
+                <span class = "sp-barra font-align" id = "nome_barra"> Amigos </span>
+            </td>
+            
+            <td align = "right">
+                <img hidden class = "imagem-alarme" src = "imagens/alarme-icon.png"/>
+                <td id = "bar" align = "right" class = "font-align">
+                </td>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<table class = "tabela sem_toque">
+    <tr>
+        <td>
+            <img class = "imagens-menu" id = "imagem_perfil"/>
+        </td>
+
+        <td>
+
+            <span class = "sp-adicionar-idade font-align" id = "idade"> </span>
+            <img class = "imagem-sexo-adicionar" id = "imagem_sexo"/>
+        </td>
+    </tr>
+
+    <tr >
+        <span class = "sp-adicionar-nome font-align" id = "nome"> </span>
+    </tr>
+</table>
+
+<div class = "btadicionar font-align cursor no" onclick = "adicionar_amigo()" id = "adicionar"> Adicionar </div>
+
+<div class = "btcancelar font-align cursor no" onclick = "location.href = 'amigos.html';" id = "cancelar"> Cancelar </div>
+
+<div class = "alerta-alarme" id = "amigo_adicionado">
+    <span class = "sp-alerta-agendado font-align"> Amigo <br> adicionado </span>
+    <div class = "botao-ok-1 cursor">
+        <span class = "sp-ok font-align"> OK </span>
+    </div>
+</div>
+
+<!-- Pop-up de ajuda -->
+<div class = "ajuda-popup" id = "ajuda">
+    <span class = "ajuda sp-alerta-agendado font-align" style = "font-size: 12pt; top: 10%; left: 4%"> </span>
+    <div class = "botao-ok cursor" style = "top: 75%">
+        <span class = "sp-ok font-align"> OK </span>
+    </div>
+</div>
+
+</div>
+
+</body>
+
+</html>

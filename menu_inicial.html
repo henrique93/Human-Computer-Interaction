@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<title> iRave - grupo 13 </title>
+
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"/>
+
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+<link rel = "stylesheet" href = "jquery.mobile-1.4.5.min.css">
+
+<script src = "jquery-1.11.2.min.js"></script>
+<script src = "jquery.mobile-1.4.5.min.js"></script>
+<script src = "funcoes.js"></script>
+<script>
+    $(document).on("pagecreate","#pageone",function(){
+        var ecra = 1;
+        $("#ecra").on("swipe",function(){
+            if(ecra){
+                $("#ecra1").fadeOut(400,function(){$("#ecra2").fadeIn();});
+                ecra = 0;
+                $("#bola1").css("background", "#A5C663");
+                $("#bola2").css("background", "black");
+            }
+            else {
+                $("#ecra2").fadeOut(400,function(){$("#ecra1").fadeIn();});
+                ecra = 1;
+                $("#bola1").css("background", "black");
+                $("#bola2").css("background", "#A5C663");
+            }
+        });
+    });
+</script>
+
+</head>
+
+<body id="pageone"  data-role="page" onload = "startTime()">
+
+<div class = "ecra noselect" id = "ecra">
+
+<div class = "esquerda botao cursor"></div>
+
+<div class = "direita botao cursor" onclick = "bloquear(event)"></div>
+
+<div class = "direita-baixo botao cursor" id = "btajuda-menu"></div>
+
+<div class = "barra">
+    <table class = "tabela" height = "10">
+        <col width = "102">
+        <col width = "10">
+        <col width = "30">
+        <tr>
+            <td align = "left">
+                <span class = "sp-barra font-align"> Menu Inicial </span>
+            </td>
+            
+            <td align = "right">
+                <img class = "imagem-alarme" src = "imagens/alarme-icon.png"/>
+                <td id = "bar" align = "right" class = "font-align">
+                </td>
+            </td>
+        </tr>
+    </table>
+
+    <table class = "tabela-bolas">
+        <td>
+            <div class = "circle" style = "background: black;" id = "bola1"> </div>
+        </td>
+
+        <td>
+            <div class = "circle" id = "bola2"> </div>
+        </td>
+    </table>
+</div>
+
+<table class = "tabela cursor sem_toque" id = "ecra1">
+    <col width = "72">
+    <col width = "72">
+    <tr>
+        <td onclick = "location.href='amigos.html'" align = "center"> 
+            <img class = "imagens-menu" src = "imagens/amigos-icon.png"/>
+            <span class = "sp-menu-inicial font-align"> Amigos </span>
+        </td>
+        <td onclick = "location.href='cameras.html'" align = "center">
+            <img class = "imagens-menu" src = "imagens/camera-icon.png"/>
+            <span class = "sp-menu-inicial font-align"> Câmaras </span>
+        </td>
+    </tr>
+
+    <tr>
+        <td onclick = "location.href='eventos.html'" align = "center">
+            <img class = "imagens-menu" src = "imagens/eventos-icon.png"/>
+            <span class = "sp-menu-inicial font-align"> Eventos </span>
+        </td>
+        <td onclick = "location.href='definicoes.html'" align = "center">
+            <img class = "imagens-menu" src = "imagens/definicoes-icon.png"/>
+            <span class = "sp-menu-inicial font-align"> Definições </span>
+        </td>
+    </tr>
+</table>
+
+<table hidden class = "tabela cursor" id = "ecra2">
+    <col width = "72">
+    <col width = "72">
+    <tr>
+        <td class = "nao-implementado" align = "center"> 
+            <img class = "imagens-menu" src = "imagens/saude-icon.png"/>
+            <span class = "sp-menu-inicial font-align"> Saúde </span>
+        </td>
+        <td class = "nao-implementado" align = "center">
+            <img class = "imagens-menu" src = "imagens/carteira-icon.png"/>
+            <span class = "sp-menu-inicial font-align"> Carteira </span>
+        </td>
+    </tr>
+
+    <tr>
+        <td class = "nao-implementado" align = "center">
+            <img class = "imagens-menu" src = "imagens/tenda-icon.png"/>
+            <span class = "sp-menu-inicial font-align"> Tenda </span>
+        </td>
+        <td class = "nao-implementado" align = "center">
+            <img class = "imagens-menu" src = "imagens/jogos-icon.png"/>
+            <span class = "sp-menu-inicial font-align"> Jogos </span>
+        </td>
+    </tr>
+</table>
+
+<!-- Pop-up de nao implementado -->
+<div class = "alerta-alarme" id = "nao_implementado_popup">
+    <span class = "sp-alerta-agendado font-align" style = "font-size: 12pt; top: 10%; left: 4%"> Não <br> Implementado </span>
+    <div class = "botao-ok cursor">
+        <span class = "sp-ok font-align"> OK </span>
+    </div>
+</div>
+
+<!-- Pop-up de ajuda -->
+<div class = "ajuda-popup" id = "ajuda">
+    <span class = "ajuda sp-alerta-agendado font-align" style = "font-size: 12pt; top: 10%; left: 4%"> </span>
+    <div class = "botao-ok cursor" style = "top: 75%">
+        <span class = "sp-ok font-align"> OK </span>
+    </div>
+</div>
+
+</div>
+
+</body>
+
+</html>

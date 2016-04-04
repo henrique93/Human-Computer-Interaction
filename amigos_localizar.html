@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"/>
+
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+<link rel = "stylesheet" href = "jquery.mobile-1.4.5.min.css">
+
+<script src = "jquery-1.11.2.min.js"></script>
+<script src = "jquery.mobile-1.4.5.min.js"></script>
+<script src = "funcoes.js"></script>
+
+</head>
+
+<body>
+    
+<div class = "ecra noselect">    
+
+<div class = "esquerda botao cursor" onclick = "retroceder(event)"  onmousedown = "inicio(event)"></div>
+
+<div class = "direita botao cursor" onclick = "bloquear(event)"></div>
+
+<div class = "direita-baixo botao cursor" id = "btajuda-amigos_localizar"></div>
+
+<img src = "imagens/mapa-icon.png"
+    height = "144" width = "144"/>
+
+
+<img class = "pessoa" src = "imagens/meta-localizar.png" />
+
+<img class = "eu" src = "imagens/localizar-icon.png" />
+    
+<div class = "btir cursor" onclick = "location.href='amigos_ir.html'"> Ir </div>
+
+<!-- Pop-up de ajuda -->
+<div class = "ajuda-popup" id = "ajuda">
+    <span class = "ajuda sp-alerta-agendado font-align" style = "font-size: 12pt; top: 10%; left: 4%"> </span>
+    <div class = "botao-ok cursor" style = "top: 75%">
+        <span class = "sp-ok font-align"> OK </span>
+    </div>
+</div>
+
+</div>
+
+</body>

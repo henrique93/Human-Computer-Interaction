@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"/>
+
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+<link rel = "stylesheet" href = "jquery.mobile-1.4.5.min.css">
+
+<script src = "jquery-1.11.2.min.js"></script>
+<script src = "jquery.mobile-1.4.5.min.js"></script>
+<script src = "funcoes.js"></script>
+<script>
+    $(document).on("pagecreate","#pageone",function(){
+        var ecra = 1;
+        $("#ecra").on("swiperight",function(){
+            if(ecra == 1){
+                $("#ecra1").fadeOut(400,function(){$("#ecra3").fadeIn();});
+                ecra = 3;
+                $("#bola3").css("background", "black");
+                $("#bola1").css("background", "#A5C663");
+            }
+            else if(ecra == 2){
+                $("#ecra2").fadeOut(400,function(){$("#ecra1").fadeIn();});
+                ecra = 1;
+                $("#bola1").css("background", "black");
+                $("#bola2").css("background", "#A5C663");
+            }
+            else if(ecra == 3){
+                $("#ecra3").fadeOut(400,function(){$("#ecra2").fadeIn();});
+                ecra = 2;
+                $("#bola2").css("background", "black");
+                $("#bola3").css("background", "#A5C663");
+            }
+        });
+        $("#ecra").on("swipeleft",function(){
+            if(ecra == 1){
+                $("#ecra1").fadeOut(400,function(){$("#ecra2").fadeIn();});
+                ecra = 2;
+                $("#bola1").css("background", "#A5C663");
+                $("#bola2").css("background", "black");
+            }
+            else if(ecra == 2){
+                $("#ecra2").fadeOut(400,function(){$("#ecra3").fadeIn();});
+                ecra = 3;
+                $("#bola2").css("background", "#A5C663");
+                $("#bola3").css("background", "black");
+            }
+            else if(ecra == 3){
+                $("#ecra3").fadeOut(400,function(){$("#ecra1").fadeIn();});
+                $("#bola3").css("background", "#A5C663");
+                $("#bola1").css("background", "black");
+                ecra = 1;
+            }
+        });
+    });
+</script>
+
+</head>
+
+<body id = "pageone"  data-role = "page" onload = "startTime()">
+
+<div class = "ecra noselect"  id = "ecra">    
+
+<div class = "esquerda botao cursor" onclick = "retroceder(event)"  onmousedown = "inicio(event)"></div>
+
+<div class = "direita botao cursor" onclick = "bloquear(event)"></div>
+
+<div class = "direita-baixo botao cursor" id = "btajuda-eventos_artistas"></div>
+
+<div class = "barra">
+    <table class = "tabela">
+        <col width = "102">
+        <col width = "10">
+        <col width = "30">
+        <tr>
+            <td align = "left">
+                <span class = "sp-barra font-align"> Artistas </span>
+            </td>
+            
+            <td align = "right">
+                <img hidden class = "imagem-alarme" src = "imagens/alarme-icon.png"/>
+                <td id = "bar" align = "right" class = "font-align">
+                </td>
+            </td>
+        </tr>
+    </table>
+
+    <table class = "tabela-bolas-3">
+        <td>
+            <div class = "circle" style = "background: black;" id = "bola1"> </div>
+        </td>
+
+        <td>
+            <div class = "circle" id = "bola2"> </div>
+        </td>
+        
+        <td>
+            <div class = "circle" id = "bola3"> </div>
+        </td>
+    </table>
+</div>
+
+<table class = "tabela cursor sem_toque" id = "ecra1">
+    <tr>
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda1"> 
+            <img class = "imagens-menu" src = "imagens/bandas/eminemlogo.png"/>
+                <span class = "sp-menu-inicial font-align"> Eminem </span>
+        </td>
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda2">
+            <img class = "imagens-menu" src = "imagens/bandas/greendaylogo.png"/>
+            <span class = "sp-menu-inicial font-align"> Green Day </span>
+        </td>
+    </tr>
+
+    <tr>        
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda3">
+            <img class = "imagens-menu" src = "imagens/bandas/u2logo.png"/>
+            <span class = "sp-menu-inicial font-align">  U2 </span>
+        </td>
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda4">
+            <img class = "imagens-menu" src = "imagens/bandas/coldplaylogo.png"/>
+            <span class = "sp-menu-inicial font-align"> Coldplay </span>
+        </td>
+    </tr>
+</table>
+
+<table hidden class = "tabela cursor sem_toque" id = "ecra2">
+    <tr>
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda5"> 
+            <img class = "imagens-menu" src = "imagens/bandas/articmonkeyslogo.png"/>
+                <span class = "sp-menu-inicial font-align"> Arctic Monkeys </span>
+        </td>
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda6">
+            <img class = "imagens-menu" src = "imagens/bandas/snoopdoglogo.png"/>
+            <span class = "sp-menu-inicial font-align"> Snoop Dog </span>
+        </td>
+    </tr>
+
+    <tr>        
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda7">
+            <img class = "imagens-menu" src = "imagens/bandas/hardwelllogo.png"/>
+            <span class = "sp-menu-inicial font-align">  Hardwell </span>
+        </td>
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda8">
+            <img class = "imagens-menu" src = "imagens/bandas/skrillexlogo.png"/>
+            <span class = "sp-menu-inicial font-align"> Skrillex </span>
+        </td>
+    </tr>
+</table> 
+
+<table hidden class = "tabela cursor sem_toque" id = "ecra3">
+    <tr>
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda9"> 
+            <img class = "imagens-menu" src = "imagens/bandas/macklemorelogo.png"/>
+                <span class = "sp-menu-inicial font-align"> Macklemore </span>
+        </td>
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda10">
+            <img class = "imagens-menu" src = "imagens/bandas/martingarrixlogo.png"/>
+            <span class = "sp-menu-inicial font-align"> Martin Garrix </span>
+        </td>
+    </tr>
+
+    <tr>        
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda11">
+            <img class = "imagens-menu" src = "imagens/bandas/thekookslogo.png"/>
+            <span class = "sp-menu-inicial font-align">  The Kooks </span>
+        </td>
+        <td onclick = "location.href='eventos_banda.html'" align = "center" id = "banda12">
+            <img class = "imagens-menu" src = "imagens/bandas/mgmtlogo.png"/>
+            <span class = "sp-menu-inicial font-align"> MGMT </span>
+        </td>
+    </tr>
+</table> 
+
+<!-- Pop-up de ajuda -->
+<div class = "ajuda-popup" id = "ajuda">
+    <span class = "ajuda sp-alerta-agendado font-align" style = "font-size: 12pt; top: 10%; left: 4%"> </span>
+    <div class = "botao-ok cursor" style = "top: 75%">
+        <span class = "sp-ok font-align"> OK </span>
+    </div>
+</div>
+
+</div>
+
+</body>
+
+</html>
